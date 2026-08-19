@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Duck Island</title>
+  <meta name="description" content="A small island on the internet.">
+
+  <style>
+    :root {
+      --sky: #dceff3;
+      --water: #8fc9d4;
+      --sand: #f4e7c5;
+      --ink: #24343a;
+      --muted: #60777d;
+      --white: rgba(255, 255, 255, 0.72);
+      --yellow: #e8b94d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--ink);
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        linear-gradient(
+          180deg,
+          var(--sky) 0%,
+          #c9e7eb 48%,
+          var(--water) 48%,
+          #78bac7 100%
+        );
+      overflow-x: hidden;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Sun */
+
+    .sun {
+      position: absolute;
+      width: 110px;
+      height: 110px;
+      top: 8vh;
+      right: 12vw;
+      border-radius: 50%;
+      background: #f7d878;
+      opacity: 0.8;
+      box-shadow: 0 0 70px rgba(247, 216, 120, 0.45);
+    }
+
+    /* Main island */
+
+    main {
+      flex: 1;
+      width: min(900px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 0 40px;
+    }
+
+    .island {
+      width: min(680px, 100%);
+      text-align: center;
+      position: relative;
+    }
+
+    .duck {
+      font-size: clamp(5rem, 14vw, 8rem);
+      line-height: 1;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 8px 4px rgba(36, 52, 58, 0.12));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    h1 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 9vw, 6rem);
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      line-height: 0.95;
+    }
+
+    .tagline {
+      margin: 24px auto 0;
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+
+    .card {
+      margin: 48px auto 0;
+      padding: 24px 30px;
+      width: min(480px, 100%);
+      background: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: 18px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 12px 40px rgba(36, 52, 58, 0.08);
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .status::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #55a85b;
+      box-shadow: 0 0 0 4px rgba(85, 168, 91, 0.12);
+    }
+
+    .card p {
+      margin: 14px 0 0;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: rgba(36, 52, 58, 0.58);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* Small wave details */
+
+    .wave {
+      position: absolute;
+      bottom: 58px;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .wave::before,
+    .wave::after {
+      content: "";
+      position: absolute;
+      left: -5%;
+      width: 110%;
+      height: 40px;
+      border-radius: 50%;
+      border-top: 2px solid white;
+    }
+
+    .wave::before {
+      top: 10px;
+    }
+
+    .wave::after {
+      top: 32px;
+      opacity: 0.6;
+    }
+
+    @media (max-width: 600px) {
+      .sun {
+        width: 75px;
+        height: 75px;
+        top: 6vh;
+        right: 8vw;
+      }
+
+      main {
+        padding-top: 60px;
+      }
+
+      .card {
+        margin-top: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <div class="sun" aria-hidden="true"></div>
+
+    <main>
+      <section class="island">
+
+        <div class="duck" aria-hidden="true">🦆</div>
+
+        <h1>Duck Island</h1>
+
+        <p class="tagline">
+          A small island on the internet.
+        </p>
+
+        <div class="card">
+          <div class="status">All is quiet</div>
+
+          <p>
+            Nothing much is happening here.
+            Which is, frankly, rather nice.
+          </p>
+        </div>
+
+      </section>
+    </main>
+
+    <div class="wave" aria-hidden="true"></div>
+
+    <footer>
+      Duck Island · 2026
+    </footer>
+
+  </div>
+</body>
+</html>
