@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @duckisland
-- 💞️ I’m looking to collaborate on https://github.com/duckisland/CreativeRealms
+- 💞️ See my project for building D&D style games https://github.com/duckisland/CreativeRealms
 - 📫 idk.. send me messages through GitHub i guess
 
 <!---
