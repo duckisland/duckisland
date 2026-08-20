@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @duckisland
+- 👋 Hi, I’m <a href="https://www.duckisland.com">DuckIsland.com</a>
 - 💞️ See my project for building D&D style games https://github.com/duckisland/CreativeRealms
 - 📫 idk.. send me messages through GitHub i guess
 
